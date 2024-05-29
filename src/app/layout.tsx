@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { css } from '@styles/css'
-import Steps from '@/app/components/Steps'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,17 +17,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={css({ backgroundColor: '#EFF5FF' }, inter.style)}>
+      <body className={css({ backgroundColor: { base: '#EFF5FF', lg: 'revert' } }, inter.style)}>
         <div className={css({
           display: 'flex',
-          flexDirection: 'column',
           minHeight: '100%',
-          backgroundImage: 'url(../../public/head-background.svg)',
-          backgroundSize: '100%',
-          backgroundRepeat: 'no-repeat',
+          base: {
+            flexDirection: 'column',
+          },
+          lg: {
+            flexDirection: 'revert',
+            padding: '16px 100px 16px 16px',
+          },
         })}
         >
-          <Steps />
           {children}
         </div>
       </body>

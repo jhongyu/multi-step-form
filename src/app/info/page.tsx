@@ -1,4 +1,5 @@
 import { css } from '@styles/css'
+import Steps from './components/Steps'
 
 const inputs = [
   {
@@ -26,12 +27,33 @@ const inputs = [
 
 export default function Info() {
   return (
-    <>
+    <div className={css({
+      lg: {
+        width: '100%',
+        display: 'grid',
+        gridTemplateColumns: '20% 1fr',
+      },
+    })}
+    >
+      <div className={css({
+        width: '100%',
+        height: '172px',
+        lg: {
+          gridArea: '1/1/3/2',
+          height: '100%',
+        },
+      })}
+      >
+        <Steps />
+      </div>
       <div className={css({
         marginInline: '16px',
         backgroundColor: 'white',
         borderRadius: '10px',
         padding: '32px 24px',
+        lg: {
+          width: '50%',
+        },
       })}
       >
         <p className={css({
@@ -120,6 +142,6 @@ export default function Info() {
           Next Step
         </button>
       </div>
-    </>
+    </div>
   )
 }
