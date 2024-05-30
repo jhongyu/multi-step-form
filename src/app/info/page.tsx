@@ -1,7 +1,7 @@
 import { css } from '@styles/css'
 import Steps from './components/Steps'
 
-const inputs = [
+const fields = [
   {
     label: 'Name',
     type: 'text',
@@ -28,31 +28,37 @@ const inputs = [
 export default function Info() {
   return (
     <div className={css({
-      lg: {
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: '100%',
+      md: {
         width: '100%',
+        margin: '0 auto',
         display: 'grid',
-        gridTemplateColumns: '20% 1fr',
+        gridTemplateColumns: 'max(20%, 250px) 1fr',
+        columnGap: '10%',
       },
     })}
     >
       <div className={css({
         width: '100%',
-        height: '172px',
-        lg: {
+        mdDown: {
+          height: '172px',
+        },
+        md: {
           gridArea: '1/1/3/2',
-          height: '100%',
         },
       })}
       >
         <Steps />
       </div>
       <div className={css({
-        marginInline: '16px',
         backgroundColor: 'white',
-        borderRadius: '10px',
-        padding: '32px 24px',
-        lg: {
-          width: '50%',
+        mdDown: {
+          marginInline: '16px',
+          marginBlockStart: '-80px',
+          borderRadius: '10px',
+          padding: '32px 24px',
         },
       })}
       >
@@ -60,6 +66,9 @@ export default function Info() {
           color: '#022959',
           fontSize: 'calc(24 / 16 * 1rem)',
           fontWeight: 'bold',
+          md: {
+            fontSize: '2rem',
+          },
         })}
         >
           Personal Info
@@ -78,10 +87,14 @@ export default function Info() {
           flexDirection: 'column',
           gap: '16px',
           marginBlockStart: '20px',
+          md: {
+            gap: '24px',
+            marginBlockStart: '40px',
+          },
         })}
         >
           {
-              inputs.map(({ label, type, id, name, placeHolder }) => (
+              fields.map(({ label, type, id, name, placeHolder }) => (
                 <div
                   key={id}
                   className={css({
@@ -94,7 +107,11 @@ export default function Info() {
                     htmlFor={id}
                     className={css({
                       color: '#022959',
-                      fontSize: 'calc(12 / 15 * 1rem)',
+                      fontSize: 'calc(12 / 16 * 1rem)',
+                      md: {
+                        fontSize: 'calc(14 / 16 * 1rem)',
+                        fontWeight: 'bold',
+                      },
                     })}
                   >
                     {label}
@@ -106,6 +123,9 @@ export default function Info() {
                       padding: '12px 0 12px 16px',
                       color: '#9699AA',
                       fontWeight: 'medium',
+                      md: {
+                        borderRadius: '8px',
+                      },
                     })}
                     type={type}
                     name={name}
@@ -118,13 +138,18 @@ export default function Info() {
         </form>
       </div>
       <div className={css({
-        backgroundColor: 'white',
         width: '100%',
-        height: '72px',
         marginTop: 'auto',
         display: 'flex',
-        padding: '16px',
         justifyContent: 'flex-end',
+        mdDown: {
+          backgroundColor: 'white',
+          height: '72px',
+          padding: '16px',
+        },
+        md: {
+          marginBlockEnd: '16px',
+        },
       })}
       >
         <button
@@ -133,10 +158,13 @@ export default function Info() {
             backgroundColor: '#022959',
             color: 'white',
             padding: '12px 16px',
-            fontSize: 'calc(14 / 16 * 1rem)',
             fontWeight: 'medium',
             display: 'grid',
             placeContent: 'center',
+            borderRadius: '4px',
+            mdDown: {
+              fontSize: 'calc(14 / 16 * 1rem)',
+            },
           })}
         >
           Next Step

@@ -17,15 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={css({ backgroundColor: { base: '#EFF5FF', lg: 'revert' } }, inter.style)}>
+      <body className={css({ backgroundColor: { base: '#EFF5FF', md: 'revert' } }, inter.style)}>
         <div className={css({
-          display: 'flex',
-          minHeight: '100%',
-          base: {
-            flexDirection: 'column',
-          },
-          lg: {
-            flexDirection: 'revert',
+          height: '100%',
+          md: {
             padding: '16px 100px 16px 16px',
           },
         })}

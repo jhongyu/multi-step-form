@@ -38,6 +38,7 @@ const sectionBaseStyles = css.raw({
   backgroundSize: '100%',
   display: 'flex',
   justifyContent: 'center',
+  alignItems: 'flex-start',
   gap: '16px',
   paddingBlockStart: '32px',
 })
@@ -51,7 +52,7 @@ export default function Steps() {
       height: '100%',
       backgroundRepeat: 'no-repeat',
       base: sectionBaseStyles,
-      lg: sectionDesktopStyles,
+      md: sectionDesktopStyles,
     })}
     >
       {
@@ -79,7 +80,7 @@ export default function Steps() {
               {value}
             </span>
             <div className={css({
-              hideBelow: 'lg',
+              hideBelow: 'md',
               display: 'flex',
               flexDirection: 'column',
             })}
