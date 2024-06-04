@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={css({ backgroundColor: { base: '#EFF5FF', md: 'revert' } }, inter.style)}>
+      <body className={css({ backgroundColor: { base: 'bg', md: 'revert' } }, inter.style)}>
         <div className={css({
           height: '100%',
           md: {

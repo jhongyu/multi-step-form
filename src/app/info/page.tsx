@@ -76,16 +76,16 @@ export default function Info() {
       <div className={css({
         backgroundColor: 'white',
         mdDown: {
-          marginInline: '16px',
+          marginInline: '4',
           marginBlockStart: '-80px',
-          borderRadius: '10px',
+          borderRadius: 'xl',
           padding: '32px 24px',
         },
       })}
       >
         <p className={css({
-          color: '#022959',
-          fontSize: 'calc(24 / 16 * 1rem)',
+          color: 'denim',
+          fontSize: '2xl',
           fontWeight: 'bold',
           md: {
             fontSize: '2rem',
@@ -96,8 +96,7 @@ export default function Info() {
         </p>
         <p className={
           css({
-            color: '#9699AA',
-            lineHeight: 'calc(25 / 16)',
+            color: 'gray',
           })
         }
         >
@@ -106,10 +105,10 @@ export default function Info() {
         <form className={css({
           display: 'flex',
           flexDirection: 'column',
-          marginBlockStart: '20px',
+          marginBlockStart: '5',
           md: {
-            gap: '24px',
-            marginBlockStart: '40px',
+            gap: '6',
+            marginBlockStart: '10',
           },
         })}
         >
@@ -119,7 +118,7 @@ export default function Info() {
                 key={id}
                 className={css({
                   display: 'grid',
-                  gridTemplateRows: '24px 1fr 24px',
+                  gridTemplateRows: '{spacing.6} 1fr {spacing.6}',
                   gridTemplateAreas: `
                     "label"
                     "input"
@@ -128,7 +127,7 @@ export default function Info() {
                   alignItems: 'center',
                   md: {
                     gridTemplateColumns: '1fr auto',
-                    gridTemplateRows: '25px 1fr',
+                    gridTemplateRows: '{spacing.6} 1fr',
                     gridTemplateAreas: `
                       "label error"
                       "input input"
@@ -139,10 +138,10 @@ export default function Info() {
                 <label
                   htmlFor={id}
                   className={css({
-                    color: '#022959',
-                    fontSize: 'calc(12 / 16 * 1rem)',
+                    color: 'denim',
+                    fontSize: 'xs',
                     md: {
-                      fontSize: 'calc(14 / 16 * 1rem)',
+                      fontSize: 'sm',
                       fontWeight: 'bold',
                     },
                     gridArea: 'label',
@@ -156,11 +155,11 @@ export default function Info() {
                     className={
                     css({
                       gridArea: 'error',
-                      fontSize: 'calc(12rem / 16)',
+                      fontSize: 'xs',
                       fontWeight: 'bold',
-                      color: '#EE374A',
+                      color: 'red',
                       md: {
-                        fontSize: 'calc(14 / 16 * 1rem)',
+                        fontSize: 'sm',
                       },
                     })
                   }
@@ -170,21 +169,21 @@ export default function Info() {
                 )}
                 <input
                   className={css({
-                    'border': '1px solid #D6D9E6',
-                    'borderRadius': '4px',
+                    'border': '1px solid {colors.border}',
+                    'borderRadius': 'sm',
                     'padding': '12px 0 12px 16px',
-                    'color': '#9699AA',
+                    'color': 'gray',
                     'fontWeight': 'medium',
                     'outline': '0px',
                     'gridArea': 'input',
                     'md': {
-                      borderRadius: '8px',
+                      borderRadius: 'lg',
                     },
                     '&:focus-visible:not([data-error=true])': {
-                      border: '1px solid #483EFF',
+                      border: '1px solid {colors.purple}',
                     },
                     '&[data-error=true]': {
-                      border: '1px solid #EE374A',
+                      border: '1px solid {colors.red}',
                     },
                   })}
                   data-error={!!errors[name]}
@@ -210,26 +209,26 @@ export default function Info() {
           padding: '16px',
         },
         md: {
-          marginBlockEnd: '16px',
+          marginBlockEnd: '4',
         },
       })}
       >
         <button
           type="button"
           className={css({
-            'backgroundColor': '#022959',
+            'backgroundColor': 'denim',
             'color': 'white',
             'padding': '12px 16px',
             'fontWeight': 'medium',
             'display': 'grid',
             'placeContent': 'center',
-            'borderRadius': '4px',
+            'borderRadius': 'sm',
             'cursor': 'pointer',
             'mdDown': {
-              fontSize: 'calc(14 / 16 * 1rem)',
+              fontSize: 'sm',
             },
             '&:hover': {
-              backgroundColor: '#164A8A',
+              backgroundColor: 'blue',
             },
           })}
           onClick={handleSubmit(() => {})}

@@ -27,8 +27,8 @@ const sectionDesktopStyles = css.raw({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-start',
-  gap: '32px',
-  borderRadius: '10px',
+  gap: '8',
+  borderRadius: 'xl',
   paddingInlineStart: '32px',
   paddingBlockStart: '40px',
 })
@@ -39,7 +39,7 @@ const sectionBaseStyles = css.raw({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'flex-start',
-  gap: '16px',
+  gap: '4',
   paddingBlockStart: '32px',
 })
 
@@ -62,19 +62,19 @@ export default function Steps() {
             className={css({
               display: 'flex',
               alignItems: 'center',
-              gap: '16px',
+              gap: '4',
             })}
           >
             <span
               className={css({
                 width: '2em',
                 height: '2em',
-                borderRadius: '50%',
+                borderRadius: 'full',
                 border: currentPathname === route ? 'none' : '1px solid white',
                 display: 'grid',
                 placeContent: 'center',
-                color: currentPathname === route ? '#022959' : 'white',
-                backgroundColor: currentPathname === route ? '#BEE2FD' : 'transparent',
+                color: currentPathname === route ? 'denim' : 'white',
+                backgroundColor: currentPathname === route ? 'skyBlue' : 'transparent',
               })}
             >
               {value}
@@ -86,15 +86,15 @@ export default function Steps() {
             })}
             >
               <span className={css({
-                fontSize: 'calc(12 / 16 * 1rem)',
-                color: '#ABBCFF',
+                fontSize: 'xs',
+                color: 'lightBlue',
               })}
               >
                 Step
                 {value}
               </span>
               <span className={css({
-                fontSize: 'calc(14 / 16 * 1rem)',
+                fontSize: 'sm',
                 fontWeight: 'bold',
                 color: 'white',
               })}
