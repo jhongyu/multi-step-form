@@ -12,6 +12,13 @@ export default function Plan() {
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100%',
+        md: {
+          width: '100%',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'max(20%, 250px) 1fr',
+          columnGap: '10%',
+        },
       })
     }
     >
@@ -20,16 +27,21 @@ export default function Plan() {
         mdDown: {
           height: '172px',
         },
+        md: {
+          gridArea: '1/1/3/2',
+        },
       })}
       >
         <Steps />
       </div>
       <div className={css({
         backgroundColor: 'white',
-        marginInline: '4',
-        marginBlockStart: '-80px',
-        borderRadius: 'xl',
-        padding: '32px 24px',
+        mdDown: {
+          marginInline: '4',
+          marginBlockStart: '-80px',
+          borderRadius: 'xl',
+          padding: '32px 24px',
+        },
       })}
       >
         <p className={css({
@@ -53,6 +65,9 @@ export default function Plan() {
         </p>
         <div className={css({
           marginBlockStart: '6',
+          md: {
+            marginBlockStart: '8',
+          },
         })}
         >
           <Plans />

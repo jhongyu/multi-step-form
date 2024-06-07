@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 const planStyles = css({
+  'flexBasis': '100%',
   'minHeight': '100px',
   'border': '1px solid {colors.lightGray}',
   'borderRadius': 'lg',
@@ -17,6 +18,11 @@ const planStyles = css({
   },
   '_hover': {
     borderColor: 'purple',
+  },
+  'md': {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    minHeight: '160px',
   },
 })
 
@@ -68,6 +74,9 @@ export default function Plans() {
           display: 'flex',
           flexDirection: 'column',
           gap: '3',
+          md: {
+            flexDirection: 'row',
+          },
         })}
       >
         <div className={planStyles}>
@@ -122,6 +131,9 @@ export default function Plans() {
         alignItems: 'center',
         borderRadius: 'lg',
         gap: '6',
+        md: {
+          marginBlockStart: '8',
+        },
       })}
       >
         <span>Monthly</span>
